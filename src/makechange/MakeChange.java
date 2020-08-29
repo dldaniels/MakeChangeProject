@@ -16,13 +16,79 @@ public class MakeChange {
 		System.out.print("Please enter the amount tendered: ");
 		amountGiven = kb.nextDouble();
 
+		double changeReturned = amountGiven - price;
+		changeReturned = Math.round(changeReturned * 100.00) / 100.00;
+
 		if (price == amountGiven) {
 			System.out.println("Thank you for providing exact change!");
 		} else if (price > amountGiven) {
-			System.out.println("Whoops, looks like that is not enough to cover the price. Please try again");
+			System.err.println("Whoops, looks like that is not enough to cover the price. Please try again.");
+		} else {
+
+			System.out.printf("Your total change due is: $%.2f%n", changeReturned);
 		}
 
+		double ten = 10.00;
+		double five = 5.00;
+		double one = 1.00;
+		double quarter = 0.25;
+		double dime = 0.10;
+		double nickel = 0.05;
+		double penny = 0.01;
+
+		// do {
+		if ((changeReturned / ten) > 0) {
+			int tensReturned = (int) (changeReturned / ten);
+			changeReturned = (changeReturned % ten) + 0.0001;
+			System.out.println("You should give back " + tensReturned + " Ten dollar bill/bills.");
+		}
+
+		if ((changeReturned / five) > 0) {
+			int fivesReturned = (int) (changeReturned / five);
+			changeReturned = (changeReturned % five);
+			System.out.println("You should give back " + fivesReturned + " Five dollar bill/bills.");
+		}
+
+		if ((changeReturned / one) > 0) {
+			int onesReturned = (int) (changeReturned / one);
+			changeReturned = (changeReturned % one);
+			System.out.println("You should give back " + onesReturned + " One dollar bill./bills");
+		}
+
+		if ((changeReturned / quarter) > 0) {
+			int quartersReturned = (int) (changeReturned / quarter);
+			changeReturned = (changeReturned % quarter);
+			System.out.println("You should give back " + quartersReturned + " Quarters.");
+		}
+
+		if ((changeReturned / dime) > 0) {
+			int dimesReturned = (int) (changeReturned / dime);
+			changeReturned = (changeReturned % dime);
+			System.out.println("You should give back " + dimesReturned + " Dimes.");
+		}
+
+		if ((changeReturned / nickel) > 0) {
+			int nickelsReturned = (int) (changeReturned / nickel);
+			changeReturned = (changeReturned % nickel) + 0.001;
+			System.out.println("You should give back " + nickelsReturned + " Nickels.");
+		}
+
+		if ((changeReturned / penny) > 0) {
+			int pennyReturned = (int) (changeReturned / penny);
+			changeReturned = (changeReturned % penny) + 0.001;
+			System.out.println("You should give back " + pennyReturned + " Pennies.");
+		}
+
+		// }while (changeReturned > 0);
+
 		kb.close();
+
+		/*
+		 * switch(changeReturned) { case changeReturned % 20 > 0:
+		 */
+
+		// }
+
 	}
 }
 
