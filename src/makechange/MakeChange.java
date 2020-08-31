@@ -53,15 +53,19 @@ public class MakeChange {
 			// coin returned to customer. Double variable is cast to an Integer and
 			// displayed on screen to report how many of each bill or coin will be returned
 
-			//If changeReturned divided by each currency amount is greater than zero the whole number amount of that currency is extracted and 
-			//stored as an integer. changeReturned is then reassigned to change returned of that modulo amount.
+			// If changeReturned divided by each currency amount is greater than zero the
+			// whole number amount of that currency is extracted and
+			// stored as an integer. changeReturned is then reassigned to change returned of
+			// that modulo amount.
 			if ((changeReturned / ten) > 0) {
 				int tensReturned = (int) (changeReturned / ten);
-				//during testing it was discovered that some calculations were off due to double rounding flaws, adding 0.0001 was able to correct the errors
+				// during testing it was discovered that some calculations were off due to
+				// double rounding flaws, adding 0.0001 was able to correct the errors
 				changeReturned = (changeReturned % ten) + 0.0001;
-				//Nested if used to determine if it is necessary to print value. For better output formatting
+				// Nested if used to determine if it is necessary to print value. For better
+				// output formatting
 				if (tensReturned == 0) {
-				
+
 				} else if (tensReturned == 1) {
 					System.out.println("Please give the customer " + tensReturned + " Ten dollar bill.");
 				} else if (tensReturned > 1) {
@@ -112,6 +116,7 @@ public class MakeChange {
 			if ((changeReturned / dime) > 0) {
 				int dimesReturned = (int) (changeReturned / dime);
 				changeReturned = (changeReturned % dime);
+
 				if (dimesReturned == 0) {
 
 				} else if (dimesReturned == 1) {
