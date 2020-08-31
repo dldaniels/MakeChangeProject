@@ -12,6 +12,7 @@ The Kwik E Mart cash register will simulate a self pay kiosk where the user ente
 * While loop
 * Decimal rounding
 * Nested If statements
+* Use of division and modulo to calculate bills and coins returned
 
 
 #### How to Run
